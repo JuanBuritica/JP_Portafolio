@@ -54,7 +54,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="space-y-24 pt-0 lg:pt-32 text-white">
+        <div className="space-y-16 pt-0 lg:pt-32 text-white">
           <div className="space-y-8 max-w-lg">
             <div className="crystal-text-box p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-700 hover:bg-white/[0.06]">
               <p className="text-2xl font-extralight text-white/90 leading-relaxed tracking-wide">
@@ -63,23 +63,23 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             <div className="flex items-center justify-between border-b border-white/20 pb-6">
               <h3 className="text-[10px] uppercase tracking-[0.5em] font-black text-white">Curriculum Vitae</h3>
             </div>
-            <div className="space-y-14">
+            <div className="space-y-8">
               {EXPERIENCE.map((exp, idx) => (
                 <div key={idx} className="group relative pl-8 hover:translate-x-2 transition-transform duration-500">
                   <div className="absolute left-0 top-1.5 w-[1px] h-full bg-white/20 group-hover:bg-white transition-colors"></div>
                   <div className="absolute left-[-4px] top-1.5 w-2 h-2 rounded-full border border-white bg-black transition-all"></div>
                   
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
+                  <div className="space-y-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                       <h4 className="text-2xl font-light group-hover:font-medium transition-all duration-500 text-white">{exp.firm}</h4>
-                      <p className="text-[9px] uppercase tracking-widest text-white/80 font-black">{exp.period}</p>
+                      <p className="text-[9px] uppercase tracking-widest text-white/60 font-black">{exp.period}</p>
                     </div>
-                    <p className="text-sm font-bold text-white uppercase tracking-widest opacity-100">{exp.role}</p>
-                    <p className="text-xs font-light text-white/70 leading-relaxed max-w-sm">{exp.description}</p>
+                    <p className="text-xs font-bold text-white uppercase tracking-widest opacity-100">{exp.role}</p>
+                    <p className="text-[13px] font-light text-white/70 leading-relaxed max-w-sm">{exp.description}</p>
                   </div>
                 </div>
               ))}

@@ -29,13 +29,13 @@ const App: React.FC = () => {
 
       <div className={`transition-all duration-1000 ${hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <main>
-          {/* Section 1: Black background */}
-          <section id="about" className="pt-40 pb-32 px-6 bg-black text-white">
+          {/* Section 1: Black background - Tightened Padding */}
+          <section id="about" className="pt-40 pb-16 px-6 bg-black text-white">
             <About />
           </section>
 
-          {/* Section 2: White background */}
-          <section id="contact" className="py-32 px-6 bg-white text-black">
+          {/* Section 2: White background - Tightened Padding */}
+          <section id="contact" className="py-20 px-6 bg-white text-black">
             <Contact />
           </section>
         </main>
