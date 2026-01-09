@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Download, Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
@@ -77,7 +76,7 @@ const Header: React.FC = () => {
             JP BURITICÁ
           </span>
           <span className={`text-[8px] tracking-[0.3em] uppercase font-black mt-2 opacity-40 transition-colors duration-500 ${contentColor}`}>
-            SYSTEMS ARCHITECT
+            SOFTWARE ENGINEER
           </span>
         </div>
       </div>
@@ -117,7 +116,6 @@ const Header: React.FC = () => {
                 className="group flex items-center justify-between px-6 py-6 rounded-2xl hover:bg-white/[0.08] transition-all text-[12px] font-black tracking-[0.2em] uppercase border-2 border-transparent hover:border-white/10 text-white"
               >
                 <div className="flex items-center gap-6">
-                  <span className="text-[10px] font-mono text-nexus-accent drop-shadow-[0_0_8px_white]">0{idx + 1}</span>
                   <span className="group-hover:translate-x-3 transition-all duration-500">{item.label}</span>
                 </div>
                 {item.label === 'Download CV' ? (

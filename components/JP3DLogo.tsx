@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface JP3DLogoProps {
@@ -55,18 +54,17 @@ const JP3DLogo: React.FC<JP3DLogoProps> = ({ size }) => {
       const loader = new FontLoader();
       let mesh: any;
 
-      // Using a more reliable CDN for the font asset
       loader.load('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/fonts/helvetiker_bold.typeface.json', (font: any) => {
         const geometry = new TextGeometry('JP', {
           font: font,
           size: 1.1,
-          height: 0.15,
+          height: 0.18,
           curveSegments: 16,
           bevelEnabled: true,
-          bevelThickness: 0.04,
-          bevelSize: 0.03,
+          bevelThickness: 0.05,
+          bevelSize: 0.04,
           bevelOffset: 0,
-          bevelSegments: 5
+          bevelSegments: 8
         });
         geometry.center();
         
@@ -77,28 +75,35 @@ const JP3DLogo: React.FC<JP3DLogoProps> = ({ size }) => {
           opacity: 0.8,
           emissive: 0xffffff,
           emissiveIntensity: 1.5,
-          metalness: 0.5,
+          metalness: 0.6,
           roughness: 0
         });
         
         mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
+
+        const animate = () => {
+          frameId = requestAnimationFrame(animate);
+          const time = Date.now() * 0.001;
+          
+          if (mesh) {
+            // Pronounced Float and Rotation
+            mesh.rotation.y += 0.015;
+            mesh.rotation.x = Math.sin(time) * 0.15;
+            mesh.rotation.z = Math.cos(time * 0.5) * 0.05;
+            
+            // Subtly Pulsing Glow
+            mesh.material.emissiveIntensity = 1.2 + Math.sin(time * 2.5) * 0.8;
+          }
+          renderer.render(scene, camera);
+        };
+
+        animate();
       }, undefined, (err: any) => {
         console.error("Font loading error:", err);
         setHasError(true);
       });
 
-      const animate = () => {
-        frameId = requestAnimationFrame(animate);
-        if (mesh) {
-          mesh.rotation.y += 0.015;
-          mesh.rotation.x = Math.sin(Date.now() * 0.001) * 0.15;
-          mesh.material.emissiveIntensity = 1.2 + Math.sin(Date.now() * 0.003) * 0.4;
-        }
-        renderer.render(scene, camera);
-      };
-
-      animate();
     } catch (e) {
       console.error("Three.js Init Error:", e);
       setHasError(true);

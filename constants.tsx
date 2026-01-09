@@ -1,4 +1,3 @@
-
 import { Project, NavigationItem } from './types';
 
 export const PROJECTS: Project[] = [
@@ -12,23 +11,12 @@ export const PROJECTS: Project[] = [
     year: '2025',
     client: 'Coupa Software',
     verticalAccent: 'INTEGRATION'
-  },
-  {
-    id: '02',
-    title: 'Analytics Automation',
-    subtitle: 'Data Engineering',
-    description: 'Automating real-time analytics solutions using SQL, Power BI, and DAX to support executive decision-making processes.',
-    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
-    category: 'Analytics',
-    year: '2024',
-    client: 'Global Services',
-    verticalAccent: 'DATA'
   }
 ];
 
 export const NAV_ITEMS: NavigationItem[] = [
-  { label: 'About & Experience', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About & Experience', href: '#curriculum-section' },
+  { label: 'Contact', href: '#contact-section' },
   { label: 'Download CV', href: '#' }
 ];
 
@@ -55,6 +43,6 @@ export const EXPERIENCE = [
     firm: 'Teleperformance',
     role: 'Associate – Customer Experience',
     period: 'April 2019 — Oct 2020',
-    description: 'Delivered high-quality customer support while meeting strict performance and confidentiality standards. Developed strong communication and problem-solving skills.'
+    description: 'Delivered high-quality customer support while meeting strict performance and confidentiality standards.'
   }
 ];

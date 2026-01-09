@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import JP3DLogo from './JP3DLogo';
 import ParticleBackground from './ParticleBackground';
@@ -29,9 +28,10 @@ const IntroOverlay: React.FC<IntroOverlayProps> = ({ onEnter, isReady }) => {
         {/* Neon White Diamond Rotating Crystal Logo Container */}
         <div className="relative w-[240px] h-[240px] mb-16 flex items-center justify-center">
           
-          {/* Crystalline Rotating Shell with Intense Neon Glow */}
-          <div className="absolute inset-0 rotate-45 bg-white/[0.05] backdrop-blur-[60px] transition-transform duration-1000 group-hover:scale-110 animate-slow-rotate shadow-[0_0_100px_rgba(255,255,255,0.25)] border border-white/40 overflow-hidden">
-            <div className="absolute inset-[-100%] crystal-shine animate-ice-glint opacity-60"></div>
+          {/* Crystalline Rotating Shell with Intense Neon Glow - Increased Blur for Depth */}
+          <div className="absolute inset-0 rotate-45 bg-white/[0.05] backdrop-blur-[120px] transition-transform duration-1000 group-hover:scale-110 animate-slow-rotate shadow-[0_0_100px_rgba(255,255,255,0.25)] border border-white/40 overflow-hidden">
+            {/* Sophisticated Glint Streak */}
+            <div className="absolute inset-[-150%] crystal-shine animate-ice-glint opacity-80 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent"></div>
           </div>
           
